@@ -2,7 +2,7 @@
   'use strict';
 
   const prefix = 'copilot-learner-guide:v1:';
-  const lessonIds = ['first-session', 'projects', 'delivery', 'parallel', 'automations', 'fusion'];
+  const lessonIds = ['first-session', 'projects', 'delivery', 'parallel', 'automations', 'jira-story', 'fusion'];
   const sentinel = 'copilot-learner-checks:unrelated';
   const keys = [prefix + 'complete', prefix + 'theme', ...lessonIds.map((id) => prefix + 'notes:' + id), sentinel];
   const frame = document.getElementById('subject');
@@ -92,7 +92,7 @@
         doc = await load('first-session');
         assert(doc.getElementById('notes-first-session').value.includes('<b>this is text</b>'), 'Note text did not round-trip.');
         assert(doc.querySelector('#first-session .print-note b') === null, 'Note content became markup.');
-        assert(doc.getElementById('progress-count').textContent === '1 of 6', 'Completion was not restored.');
+        assert(doc.getElementById('progress-count').textContent === '1 of 7', 'Completion was not restored.');
         assert(doc.getElementById('start-learning').getAttribute('href') === '#projects', 'Resume did not choose the first unfinished lesson.');
         assert(localStorage.getItem(sentinel) === 'keep', 'Unrelated storage changed.');
       });
@@ -146,7 +146,7 @@
           const text = await content.text();
           assert(text.includes('Verified the boundary; <b>this is text</b>.'), 'Export lost the note.');
           assert(text.includes('Completion: marked complete'), 'Export lost progress.');
-          assert((text.match(/^## /gm) || []).length === 6, 'Export omitted a lesson.');
+          assert((text.match(/^## /gm) || []).length === 7, 'Export omitted a lesson.');
         } finally {
           win.URL.createObjectURL = create;
           win.HTMLAnchorElement.prototype.click = click;
@@ -161,7 +161,7 @@
         doc.getElementById('reset-progress').click();
         doc.getElementById('confirm-reset').click();
         assert(doc.getElementById('notes-first-session').value === '', 'Confirmed reset did not clear notes.');
-        assert(doc.getElementById('progress-count').textContent === '0 of 6', 'Confirmed reset did not clear progress.');
+        assert(doc.getElementById('progress-count').textContent === '0 of 7', 'Confirmed reset did not clear progress.');
         assert(localStorage.getItem(prefix + 'notes:first-session') === null, 'Saved note remains after reset.');
         assert(localStorage.getItem(sentinel) === 'keep', 'Reset modified unrelated storage.');
       });
@@ -171,7 +171,7 @@
         localStorage.setItem(prefix + 'notes:projects', 'not json');
         doc = await load('projects');
         assert(!doc.getElementById('storage-warning').hidden, 'Corrupt storage was silently ignored.');
-        assert(doc.getElementById('progress-count').textContent === '0 of 6', 'Invalid state corrupted progress.');
+        assert(doc.getElementById('progress-count').textContent === '0 of 7', 'Invalid state corrupted progress.');
         await navigate('delivery');
         assert(!doc.getElementById('delivery').hidden, 'Navigation broke after corrupt data.');
         localStorage.removeItem(prefix + 'complete');

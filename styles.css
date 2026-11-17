@@ -51,14 +51,14 @@ html[data-theme="dark"] {
   --cp-highlight: rgba(253, 142, 161, 0.12);
 }
 
-/* Preserve the repository's navy/blue identity across the standalone guide. */
+/* Use a neutral navy/blue identity for the standalone guide. */
 :root {
-  --ford-navy: #003478;
+  --brand-navy: #003478;
   --gh-blue: #1F6FEB;
-  --cp-brand: var(--ford-navy);
+  --cp-brand: var(--brand-navy);
   --cp-on-brand: #ffffff;
   --cp-accent: var(--gh-blue);
-  --cp-accent-hover: var(--ford-navy);
+  --cp-accent-hover: var(--brand-navy);
   --cp-accent-soft: color-mix(in srgb, var(--gh-blue) 7%, var(--cp-surface));
   --cp-link: var(--gh-blue);
   --cp-good-text: #176f35;

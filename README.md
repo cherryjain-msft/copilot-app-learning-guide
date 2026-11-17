@@ -3,22 +3,30 @@
 **Read the public guide: https://cherryjain-msft.github.io/copilot-app-learning-guide/**
 
 An independently authored, self-paced guide for learners rather than presenters.
-No private demo repositories, custom Jira extension, or workshop recording is
-required. Official GitHub Docs are linked from every lesson and organized in a
-topic-based reading library.
+The seven practical lessons go beyond prompts into Copilot app Projects,
+repository context, sessions, automations, a Jira story-to-PR workflow, and
+evidence-based review. No private demo repositories, custom Jira extension, or
+workshop recording is required. Official GitHub Docs are linked from every
+lesson and organized in a topic-based reading library.
 
 ## What you can learn
 
 1. Start a safe agent session and distinguish modes from permissions.
-2. Organize a Project and its Library, and ground findings in evidence.
+2. Run a Copilot app Project: set a goal, add repositories and Library sources,
+   coordinate bounded sessions, and steer work from Overview.
 3. Plan, implement, test, and review one small change.
 4. Verify isolation between parallel worktrees.
-5. Rehearse and run a bounded local automation.
-6. Compare available models and Copilot Fusion fairly.
+5. Design an automation by trigger, tools, ownership, permissions, and cost.
+6. Trace a Jira story through analysis, planning, coding-agent handoff, test
+   coverage, and pull request review, with explicit gates for Jira writes.
+7. Compare available models and Copilot Fusion fairly.
 
-Additional reading covers Jira/MCP integrations, custom canvases, Agent Merge,
-and stacked pull requests. The site includes worked examples, interactive
-knowledge checks, browser-local notes, notebook export, and a printable view.
+Advanced reading covers building custom Jira/MCP integrations, canvas
+extensions, Agent Merge, and stacked pull requests. The Jira workflow is
+illustrative and clearly distinguished from a built-in app feature; the guide
+does not distribute private extension code or company-specific configuration.
+The site includes worked examples, interactive knowledge checks, browser-local
+notes, notebook export, and a printable view.
 
 ## Practice kit
 

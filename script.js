@@ -55,10 +55,11 @@
   const notes = new Map();
   const reflection = {
     'first-session': 'What did you verify yourself, and which actions did you keep outside the task?',
-    projects: 'Which source defined the correct behavior? What evidence was still missing?',
+    projects: 'What did the Project coordinate? Which repository, Library, and Overview evidence did you inspect?',
     delivery: 'Which boundary or regression test changed your confidence in the implementation?',
     parallel: 'Record the two paths, branches, and starting SHAs. What was actually isolated?',
-    automations: 'Did you rehearse or observe a saved run? What can this job read, write, and repeat?',
+    automations: 'What trigger, identity, tools, cost limits, and stop condition did you verify?',
+    'jira-story': 'Which stage is actually complete? What Jira/GitHub write still needs a human decision?',
     fusion: 'Record your choices, actual measurements, scores, and the limits of the comparison.'
   };
 
