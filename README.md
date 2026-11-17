@@ -1,0 +1,76 @@
+# GitHub Copilot app learner guide
+
+**Read the public guide: https://cherryjain-msft.github.io/copilot-app-learning-guide/**
+
+An independently authored, self-paced guide for learners rather than presenters.
+No private demo repositories, custom Jira extension, or workshop recording is
+required. Official GitHub Docs are linked from every lesson and organized in a
+topic-based reading library.
+
+## What you can learn
+
+1. Start a safe agent session and distinguish modes from permissions.
+2. Organize a Project and its Library, and ground findings in evidence.
+3. Plan, implement, test, and review one small change.
+4. Verify isolation between parallel worktrees.
+5. Rehearse and run a bounded local automation.
+6. Compare available models and Copilot Fusion fairly.
+
+Additional reading covers Jira/MCP integrations, custom canvases, Agent Merge,
+and stacked pull requests. The site includes worked examples, interactive
+knowledge checks, browser-local notes, notebook export, and a printable view.
+
+## Practice kit
+
+Download `practice-kit.zip` from the guide and extract it. The original, fictional
+training files are also under `practice/`. The tiny JavaScript example uses
+Node.js 20+ and no package dependencies. Its baseline deliberately uses a 24-hour
+rule; the delivery exercise asks learners to implement the 2-hour rule.
+
+```powershell
+node --test practice\booking-policy.test.js
+```
+
+The six baseline tests should pass. Consult the kit's README before practicing.
+No private repository links, API keys, or third-party accounts are needed.
+
+## Run the site locally
+
+Open `index.html` directly, or serve this directory:
+
+```powershell
+python -m http.server 8080 --bind 127.0.0.1
+```
+
+Visit `http://127.0.0.1:8080/`. There is no build step, framework, dependency
+installation, telemetry, or external script. Clipboard access and persistence
+depend on browser permissions. Errors are shown explicitly; notebook export
+remains available from the active tab when storage fails.
+
+For browser regression checks, visit `http://127.0.0.1:8080/tests.html` and select
+**Run checks**. Use a disposable browser profile and do not edit guide notes in
+another tab during the checks. The page preserves and restores storage keys it
+touches.
+
+## Publishing
+
+This repository contains only public learner material and the original practice
+kit. GitHub Pages serves the root of `main`; `.nojekyll` keeps it a static site.
+The author's separate workshop and companion application repositories are not
+part of this publication or its history.
+
+Public visibility gives visitors read access, not permission to push changes.
+Run exercises in your own local practice repository, not against this guide's
+publishing branch.
+
+## Maintenance
+
+Update the practice ZIP whenever `practice/` changes, keeping a single
+`copilot-practice/` directory inside the archive. Keep the intentional baseline
+and worked examples consistent. Validate the official documentation before
+changing feature claims; documentation was reviewed in November 2026.
+
+The guide does not claim that a private/custom Jira Workbench is built in,
+that cloud automations run in public repositories, or that enabling Agent Merge
+is necessarily inspection-only. Read the current linked GitHub documentation
+before enabling account-dependent features.
